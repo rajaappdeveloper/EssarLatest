@@ -1,0 +1,476 @@
+/* 
+=============================================
+    Global Styles & Material Design Defaults
+============================================== 
+*/
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    background-color: #fafafa; /* Material background color */
+}
+
+/* Typography Utilities */
+.letter-spacing-1 {
+    letter-spacing: 1px;
+}
+
+/* Material Gradient Theme */
+.bg-gradient-primary,
+.gradient-banner,
+.material-footer,
+.btn-material-primary {
+    background: #59CDE9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0A2A88, #59CDE9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0A2A88, #59CDE9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Custom Text Colors */
+.text-primary {
+    color: #0A2A88 !important;
+}
+
+/* Material Shadows */
+.shadow-sm {
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05), 0 1px 3px 0 rgba(0,0,0,0.08) !important;
+}
+.shadow {
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06) !important;
+}
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05) !important;
+}
+.shadow-hover:hover {
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04) !important;
+}
+
+/* 
+=============================================
+    Header & Navigation
+============================================== 
+*/
+.top-header {
+    font-size: 0.9rem;
+}
+
+.material-nav {
+    background-color: #0A2A88; /* Dark blue from gradient for solid header */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.material-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    padding: 1.2rem 1rem !important;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.material-nav .nav-link:hover,
+.material-nav .nav-link.active {
+    color: #fff !important;
+}
+
+.material-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background-color: #59CDE9;
+    border-radius: 3px 3px 0 0;
+}
+
+.material-dropdown {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    padding: 10px 0;
+    margin-top: 0;
+}
+
+.material-dropdown .dropdown-item {
+    padding: 8px 20px;
+    font-weight: 400;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.material-dropdown .dropdown-item:hover {
+    background-color: rgba(89, 205, 233, 0.1);
+    color: #0A2A88;
+    padding-left: 25px; /* slight indent on hover */
+}
+
+.btn-quote {
+    background-color: transparent;
+    border: 2px solid #59CDE9;
+    color: #59CDE9 !important;
+    font-weight: 600;
+    padding: 8px 24px;
+    transition: all 0.3s;
+}
+
+.btn-quote:hover {
+    background-color: #59CDE9;
+    color: #0A2A88 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(89, 205, 233, 0.4);
+}
+
+/* 
+=============================================
+    Hero Section
+============================================== 
+*/
+.hero-slide {
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(10, 42, 136, 0.85), rgba(89, 205, 233, 0.6));
+}
+
+.btn-material-primary {
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    padding: 12px 36px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-material-primary:hover {
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(10, 42, 136, 0.4) !important;
+}
+
+/* 
+=============================================
+    Inner Page Banner
+============================================== 
+*/
+.page-banner {
+    padding: 100px 0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #fff;
+}
+
+.page-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(10, 42, 136, 0.9), rgba(89, 205, 233, 0.7));
+}
+
+.page-banner-content {
+    position: relative;
+    z-index: 1;
+}
+
+.page-banner h1 {
+    font-weight: 700;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* 
+=============================================
+    Animations
+============================================== 
+*/
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 
+=============================================
+    Feature Cards
+============================================== 
+*/
+.feature-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #0A2A88, #59CDE9);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-card .icon-box {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    background-color: rgba(89, 205, 233, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .icon-box {
+    background: linear-gradient(to right, #0A2A88, #59CDE9);
+    color: #fff !important;
+    transform: scale(1.1);
+}
+
+/* 
+=============================================
+    About & Product Sections
+============================================== 
+*/
+.cert-logo {
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.cert-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.product-card {
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.08) !important;
+}
+
+.product-card img {
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.read-more-link {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .read-more-link {
+    letter-spacing: 1px;
+}
+
+/* 
+=============================================
+    Service Details & Sidebar
+============================================== 
+*/
+.service-section {
+    padding: 80px 0;
+}
+
+.service-sidebar {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.sidebar-widget {
+    padding: 30px;
+}
+
+.sidebar-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #59CDE9;
+    color: #0A2A88;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li a {
+    display: block;
+    padding: 12px 20px;
+    color: #555;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li.active a {
+    background-color: #0A2A88;
+    color: #fff;
+    padding-left: 25px;
+}
+
+.brochure-card {
+    background: linear-gradient(to right, #0A2A88, #59CDE9);
+    color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.brochure-card a {
+    color: #fff;
+    text-decoration: none;
+    background: rgba(255,255,255,0.2);
+    display: block;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.brochure-card a:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.service-content h2 {
+    color: #0A2A88;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.service-main-img {
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+/* 
+=============================================
+    Footer
+============================================== 
+*/
+.material-footer {
+    position: relative;
+}
+
+.contact-widget {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #fff;
+}
+
+.footer-links li a {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links li a:hover {
+    color: #fff !important;
+    opacity: 1 !important;
+    transform: translateX(8px);
+}
+
+/* Scroll to top */
+.scroll-top {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    padding: 0;
+    transition: all 0.3s;
+    background: linear-gradient(to bottom, #59CDE9, #0A2A88);
+    border: none;
+    z-index: 99;
+}
+
+.scroll-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(10, 42, 136, 0.4) !important;
+}
+
+/* 
+=============================================
+    Responsive Adjustments
+============================================== 
+*/
+@media (max-width: 991px) {
+    .hero-slide {
+        height: 500px;
+    }
+    
+    .display-3 {
+        font-size: 2.5rem;
+    }
+    
+    .material-nav .nav-link {
+        padding: 0.8rem 1rem !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .material-nav .nav-link.active::after {
+        display: none;
+    }
+    
+    .btn-quote {
+        margin-top: 15px;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 767px) {
+    .feature-section .mt-n5 {
+        margin-top: 0 !important;
+    }
+    
+    .hero-slide {
+        height: 400px;
+    }
+    
+    .display-3 {
+        font-size: 2rem;
+    }
+}
