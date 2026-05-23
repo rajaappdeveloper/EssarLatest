@@ -20,10 +20,21 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="preloader-active">
+
+        <!-- Landing Preloader -->
+    <div id="landing-preloader" class="landing-preloader">
+        <div class="preloader-content text-center">
+            <div class="preloader-logo-container">
+                <img src="images/logo/essar-engg-logo.png" alt="Essar Engineering" class="preloader-logo">
+            </div>
+        </div>
+    </div>
 
     <!-- Top Header -->
-    <div class="top-header bg-light py-2 border-bottom d-none d-lg-block">
+    <!-- Frozen Header -->
+    <header class="sticky-top shadow-sm header-frozen">
+        <div class="top-header bg-light py-2 border-bottom d-none d-lg-block">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="logo">
                 <a href="index.html">
@@ -46,9 +57,10 @@
             </div>
         </div>
     </div>
-
-    <!-- Navigation Menu -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top material-nav">
+        
+        <!-- Navigation Menu -->
+        <nav class="navbar navbar-expand-lg navbar-dark material-nav">
+            
         <div class="container">
             <!-- Mobile Logo -->
             <a class="navbar-brand d-lg-none" href="index.html">
@@ -82,14 +94,18 @@
                             <li><a class="dropdown-item" href="machined-components.html">Machined Components</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                                                            <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="servDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Services
                         </a>
                         <ul class="dropdown-menu material-dropdown" aria-labelledby="servDropdown">
                             <li><a class="dropdown-item" href="onsite-services.html">Onsite Services</a></li>
                             <li><a class="dropdown-item" href="electrical-mechanical-services.html">M & E Projects</a></li>
+                            <li><a class="dropdown-item" href="architectural-works.html">Architectural Works</a></li>
+                            <li><a class="dropdown-item" href="civil-structural-works.html">Civil & Structural Works</a></li>
+                            <li><a class="dropdown-item" href="mechanical-electrical-works.html">Mechanical & Electrical Works</a></li>
                             <li><a class="dropdown-item" href="construction-maintenance-services.html">Maintenance Services</a></li>
+                            <li><a class="dropdown-item" href="additional-services.html">Additional Services</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -102,10 +118,13 @@
                 <div class="d-flex align-items-center">
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSer4U6WPapZ5XHBWiyMpfIh69OKmxI6jo19H05zmBLKvn5XxA/viewform" target="_blank" class="btn btn-quote me-3 rounded-pill shadow-sm">GET A QUOTE</a>
                     <a href="https://essarengg.com.sg/essar-brochure.pdf" target="_blank" class="text-white fs-4" title="Download Brochure"><i class="fas fa-file-pdf"></i></a>
+                    <button id="theme-toggle" class="btn btn-sm btn-outline-secondary ms-2 rounded-circle" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-color: rgba(255,255,255,0.4); color: white;" title="Toggle Dark/Light Mode"><i class="fas fa-moon"></i></button>
                 </div>
             </div>
         </div>
-    </nav>
+    
+        </nav>
+    </header>
 
     <!-- Page Banner -->
     <section class="page-banner" style="background-image: url('images/commercial-structural-fabrication.jpg');">

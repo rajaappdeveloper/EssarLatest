@@ -1,3 +1,13 @@
+// Immediate check for dark mode to prevent visual flash
+(function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize Bootstrap Carousel with specific options
@@ -56,5 +66,80 @@ document.addEventListener('DOMContentLoaded', function() {
                 el.style.animation = null; 
             });
         });
+    }
+
+    // Preloader Logic: Full logo landing screen for first visit, clean circular spinner for navigations
+    const preloader = document.getElementById('landing-preloader');
+    if (preloader) {
+        const hasVisited = sessionStorage.getItem('hasVisited');
+        if (hasVisited === 'true') {
+            // Subsequent load within session: transform to simple circular spinner
+            const activeTheme = document.documentElement.getAttribute('data-theme') || localStorage.getItem('theme') || 'light';
+            if (activeTheme === 'dark') {
+                preloader.style.backgroundColor = 'rgba(18, 18, 18, 0.9)';
+            } else {
+                preloader.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+            }
+            
+            preloader.innerHTML = `
+                <div class="preloader-content text-center">
+                    <div class="nav-spinner"></div>
+                </div>
+            `;
+            
+            // Fast loading fade out (600ms spinner)
+            setTimeout(function() {
+                preloader.classList.add('fade-out');
+                document.body.classList.remove('preloader-active');
+                setTimeout(function() {
+                    preloader.remove();
+                }, 600);
+            }, 600);
+        } else {
+            // First time load: Show brand-filled landing screen for exactly 2 seconds and mark visited
+            sessionStorage.setItem('hasVisited', 'true');
+            
+            setTimeout(function() {
+                preloader.classList.add('fade-out');
+                document.body.classList.remove('preloader-active');
+                setTimeout(function() {
+                    preloader.remove();
+                }, 600);
+            }, 2000);
+        }
+    }
+
+    // Dark Theme Toggler Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                updateToggleIcon('light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                updateToggleIcon('dark');
+            }
+        });
+
+        // Initialize toggle button icon
+        const activeTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        updateToggleIcon(activeTheme);
+    }
+
+    function updateToggleIcon(theme) {
+        const icon = themeToggleBtn.querySelector('i');
+        if (icon) {
+            if (theme === 'dark') {
+                icon.className = 'fas fa-sun';
+                themeToggleBtn.title = 'Switch to Light Mode';
+            } else {
+                icon.className = 'fas fa-moon';
+                themeToggleBtn.title = 'Switch to Dark Mode';
+            }
+        }
     }
 });
