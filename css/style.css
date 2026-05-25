@@ -4,7 +4,7 @@
 ============================================== 
 */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #333;
     -webkit-font-smoothing: antialiased;
     background-color: #fafafa; /* Material background color */
@@ -614,6 +614,26 @@ body {
 [data-theme="dark"] h5,
 [data-theme="dark"] .service-content h2 {
     color: #ffffff !important;
+}
+
+[data-theme="dark"] .table {
+    color: #e0e0e0 !important;
+    border-color: #3c4043 !important;
+    --bs-table-color: #e0e0e0;
+    --bs-table-bg: transparent;
+    --bs-table-border-color: #3c4043;
+    --bs-table-striped-color: #e0e0e0;
+    --bs-table-hover-color: #ffffff;
+}
+
+[data-theme="dark"] .table td,
+[data-theme="dark"] .table th {
+    color: #e0e0e0 !important;
+    border-color: #3c4043 !important;
+}
+
+[data-theme="dark"] .lead {
+    color: #e0e0e0 !important;
 }
 
 [data-theme="dark"] .text-muted,
