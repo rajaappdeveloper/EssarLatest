@@ -121,15 +121,36 @@
     </header>
 
     <!-- Hero Slider -->
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-indicators">
+    <div id="heroCarousel" class="carousel" data-bs-ride="carousel" style="position: relative;">
+        <!-- SVG Image Dissolve Background -->
+        <svg id="hero-svg-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <filter id="turbulent-dissolve" x="0" y="0" width="1920" height="1080" filterUnits="userSpaceOnUse">
+                    <feTurbulence type="fractalNoise" baseFrequency=".012"/>
+                    <feColorMatrix type="luminanceToAlpha"/>
+                    <feComponentTransfer>
+                        <feFuncA type="linear" slope="5" id="dissolve-slope"/>
+                    </feComponentTransfer>
+                    <feComponentTransfer>
+                        <feFuncA type="discrete" tableValues="0 1"/>
+                    </feComponentTransfer>
+                    <feGaussianBlur stdDeviation="1"/>
+                    <feComposite operator="in" in="SourceGraphic" result="overlay"/>
+                    <feImage id="svg-underlay" href="images/home/onsite-erection.jpg" preserveAspectRatio="xMidYMid slice" width="1920" height="1080" result="underlay"/>
+                    <feComposite operator="over" in="overlay" in2="underlay"/>
+                </filter>
+            </defs>
+            <image id="svg-overlay" filter="url(#turbulent-dissolve)" width="1920" height="1080" preserveAspectRatio="xMidYMid slice" href="images/home/onsite-construction-fabrication.jpg"/>
+        </svg>
+
+        <div class="carousel-indicators" style="z-index: 2;">
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-inner">
+        <div class="carousel-inner" style="z-index: 1;">
             <!-- Slide 1 -->
-            <div class="carousel-item active hero-slide" style="background-image: url('images/home/onsite-construction-fabrication.jpg');">
+            <div class="carousel-item active hero-slide">
                 <div class="hero-overlay d-flex align-items-center">
                     <div class="container text-white text-center text-md-start slide-content">
                         <p class="lead mb-2 fw-medium fade-in-up">Sheet metal, End-to-end steel fabrication and erection services</p>
@@ -139,7 +160,7 @@
                 </div>
             </div>
             <!-- Slide 2 -->
-            <div class="carousel-item hero-slide" style="background-image: url('images/home/onsite-erection.jpg');">
+            <div class="carousel-item hero-slide">
                 <div class="hero-overlay d-flex align-items-center">
                     <div class="container text-white text-center text-md-start slide-content">
                         <p class="lead mb-2 fw-medium fade-in-up">Onsite Welding, Piping & Repair works</p>
@@ -149,7 +170,7 @@
                 </div>
             </div>
             <!-- Slide 3 -->
-            <div class="carousel-item hero-slide" style="background-image: url('images/home/clean-room-ducting-revamp-welding.jpg');">
+            <div class="carousel-item hero-slide">
                 <div class="hero-overlay d-flex align-items-center">
                     <div class="container text-white text-center text-md-start slide-content">
                         <p class="lead mb-2 fw-medium fade-in-up">Clean room ducting and revamp services with special Teflon coated SS ducts</p>
@@ -159,14 +180,6 @@
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
 
     <!-- Top Features Grid -->

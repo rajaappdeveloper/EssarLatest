@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (heroCarousel) {
         new bootstrap.Carousel(heroCarousel, {
             interval: 5000,
-            pause: 'hover',
+            pause: false,
             wrap: true
         });
     }
@@ -56,15 +56,62 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Re-trigger CSS animations on carousel slide
+    // Re-trigger CSS animations on carousel slide and handle SVG dissolve background
     if (heroCarousel) {
-        heroCarousel.addEventListener('slide.bs.carousel', function () {
+        const carouselImages = [
+            'images/home/onsite-construction-fabrication.jpg',
+            'images/home/onsite-erection.jpg',
+            'images/home/clean-room-ducting-revamp-welding.jpg'
+        ];
+        
+        heroCarousel.addEventListener('slide.bs.carousel', function (e) {
+            // Text animation reflow
             const activeElements = document.querySelectorAll('.hero-slide.active .fade-in-up');
             activeElements.forEach(el => {
                 el.style.animation = 'none';
                 el.offsetHeight; /* trigger reflow */
                 el.style.animation = null; 
             });
+            
+            // SVG Dissolve animation
+            const fromIndex = e.from;
+            const toIndex = e.to;
+            
+            const overlayImg = document.getElementById('svg-overlay');
+            const underlayImg = document.getElementById('svg-underlay');
+            const slopeEl = document.getElementById('dissolve-slope');
+            
+            if (overlayImg && underlayImg && slopeEl) {
+                // Set the outgoing image as the overlay
+                overlayImg.setAttribute('href', carouselImages[fromIndex]);
+                // Set the incoming image as the underlay
+                underlayImg.setAttribute('href', carouselImages[toIndex]);
+                
+                // Animate slope from 5 to 0
+                let startTime = null;
+                const duration = 800; // ms duration of dissolve
+                
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const progress = Math.min((timestamp - startTime) / duration, 1);
+                    
+                    const currentSlope = 5 - (progress * 5); 
+                    slopeEl.setAttribute('slope', currentSlope);
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        // Reset to solid state with the new slide as overlay
+                        overlayImg.setAttribute('href', carouselImages[toIndex]);
+                        slopeEl.setAttribute('slope', 5);
+                        
+                        // Prep underlay with the next logical slide
+                        const nextIndex = (toIndex + 1) % carouselImages.length;
+                        underlayImg.setAttribute('href', carouselImages[nextIndex]);
+                    }
+                }
+                requestAnimationFrame(step);
+            }
         });
     }
 
