@@ -189,4 +189,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
+
+    // Handle mobile sub-dropdown toggling
+    const submenuToggles = document.querySelectorAll('.dropdown-submenu > .dropdown-toggle-submenu');
+    submenuToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            if (window.innerWidth < 992) {
+                e.preventDefault();
+                e.stopPropagation();
+                const parent = this.parentElement;
+                parent.classList.toggle('show');
+            }
+        });
+    });
 });
+
