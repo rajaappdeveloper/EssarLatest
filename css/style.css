@@ -1265,5 +1265,79 @@ a[href*="docs.google.com/forms"] {
     color: #b0b0b0 !important;
 }
 
+/* Interactive Contact Email Pills & Touch Targets */
+.email-pill-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.email-pill-link:hover {
+    background-color: #f8f9fa;
+    border-color: #0A2A88 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(10, 42, 136, 0.08);
+}
+
+.email-pill-link:hover .fa-external-link-alt {
+    opacity: 1 !important;
+    transform: translate(2px, -2px);
+}
+
+.email-pill-link .fa-external-link-alt {
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .email-pill-link {
+    background-color: #2d2e31 !important;
+    border-color: #4d5154 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .email-pill-link:hover {
+    background-color: #35373a !important;
+    border-color: #59CDE9 !important;
+    box-shadow: 0 4px 12px rgba(89, 205, 233, 0.15);
+}
+
+[data-theme="dark"] .email-pill-link .text-dark {
+    color: #e8eaed !important;
+}
+
+[data-theme="dark"] .email-pill-link .text-muted {
+    color: #9aa0a6 !important;
+}
+
+[data-theme="dark"] .corp-info-item .text-dark {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .corp-info-item .text-muted {
+    color: #9aa0a6 !important;
+}
+
+[data-theme="dark"] .corp-info-item a.text-dark:hover {
+    color: #59CDE9 !important;
+}
+
+[data-theme="dark"] .btn-outline-danger {
+    color: #ff4b4b !important;
+    border-color: #ff4b4b !important;
+}
+
+[data-theme="dark"] .btn-outline-danger:hover {
+    color: #ffffff !important;
+    background-color: #ff4b4b !important;
+    border-color: #ff4b4b !important;
+}
+
+
+
 
 

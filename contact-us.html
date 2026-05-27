@@ -141,40 +141,73 @@
             <div class="row g-5">
                 <!-- Contact Info -->
                 <div class="col-lg-5">
-                    <div class="p-4 p-md-5 bg-light rounded-4 shadow-sm h-100">
-                        <h2 class="fw-bold mb-4">Contact Information</h2>
-                        <div class="mx-0 bg-primary mb-4" style="height: 4px; width: 60px;"></div>
-                        
-                        <div class="d-flex mb-4">
-                            <div class="icon-box text-primary me-3">
-                                <i class="fas fa-map-marker-alt fa-2x"></i>
+                    <div class="corp-info-card shadow-sm rounded-4 border-0 p-4 p-md-5 bg-white h-100">
+                        <h2 class="fw-bold mb-4 text-primary border-bottom pb-3"><i class="fas fa-info-circle me-2"></i>Contact Information</h2>
+                        <div class="row g-4">
+                            <!-- Item 1: Location -->
+                            <div class="col-12">
+                                <div class="corp-info-item d-flex align-items-start gap-3 p-3 rounded-4 bg-light shadow-sm">
+                                    <div class="corp-icon-box bg-danger-subtle text-danger rounded-3">
+                                        <i class="fas fa-map-marker-alt fa-lg"></i>
+                                    </div>
+                                    <div>
+                                        <span class="d-block text-uppercase text-muted small fw-bold tracking-wider mb-1">Our Location</span>
+                                        <span class="fw-bold text-dark d-block mb-2 fs-6">158 Pandan loop, Singapore 128356</span>
+                                        <a href="https://maps.google.com/?q=158+Pandan+Loop,+Singapore+128356" target="_blank" class="btn btn-sm btn-outline-danger rounded-pill px-3 py-1 mt-1 small transition"><i class="fas fa-directions me-1"></i> Get Directions</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <h5 class="fw-bold mb-1">Our Location</h5>
-                                <p class="text-muted">158 Pandan loop, Singapore 128356</p>
-                            </div>
-                        </div>
 
-                        <div class="d-flex mb-4">
-                            <div class="icon-box text-primary me-3">
-                                <i class="fas fa-phone fa-2x"></i>
+                            <!-- Item 2: Phone -->
+                            <div class="col-md-6">
+                                <div class="corp-info-item d-flex align-items-start gap-3 p-3 rounded-4 bg-light shadow-sm h-100">
+                                    <div class="corp-icon-box bg-primary-subtle text-primary rounded-3">
+                                        <i class="fas fa-phone fa-lg"></i>
+                                    </div>
+                                    <div>
+                                        <span class="d-block text-uppercase text-muted small fw-bold tracking-wider mb-1">Phone</span>
+                                        <a href="tel:+6567772455" class="fw-bold text-dark fs-6 text-decoration-none transition"><i class="fas fa-phone-alt me-1 text-primary small"></i> (+65) 6777 2455</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <h5 class="fw-bold mb-1">Phone & Fax</h5>
-                                <p class="text-muted mb-0">Phone: (+65) 6777 2455</p>
-                                <p class="text-muted">Fax: (+65) 6777 2598</p>
-                            </div>
-                        </div>
 
-                        <div class="d-flex mb-4">
-                            <div class="icon-box text-primary me-3">
-                                <i class="fas fa-envelope fa-2x"></i>
+                            <!-- Item 3: Fax -->
+                            <div class="col-md-6">
+                                <div class="corp-info-item d-flex align-items-start gap-3 p-3 rounded-4 bg-light shadow-sm h-100">
+                                    <div class="corp-icon-box bg-warning-subtle text-warning rounded-3">
+                                        <i class="fas fa-fax fa-lg"></i>
+                                    </div>
+                                    <div>
+                                        <span class="d-block text-uppercase text-muted small fw-bold tracking-wider mb-1">Fax</span>
+                                        <span class="fw-bold text-dark fs-6"><i class="fas fa-print me-1 text-warning small"></i> (+65) 6777 2598</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <h5 class="fw-bold mb-1">Email Inquiries</h5>
-                                <p class="text-muted mb-1"><a href="mailto:skumar@essarengg.com.sg" class="text-decoration-none text-muted">skumar@essarengg.com.sg</a></p>
-                                <p class="text-muted mb-1"><a href="mailto:bkj@essarengg.com.sg" class="text-decoration-none text-muted">bkj@essarengg.com.sg</a></p>
-                                <p class="text-muted"><a href="mailto:gerry@essarengg.com.sg" class="text-decoration-none text-muted">gerry@essarengg.com.sg</a></p>
+
+                            <!-- Item 4: Email Inquiries -->
+                            <div class="col-12">
+                                <div class="corp-info-item d-flex align-items-start gap-3 p-3 rounded-4 bg-light shadow-sm">
+                                    <div class="corp-icon-box bg-success-subtle text-success rounded-3">
+                                        <i class="fas fa-envelope fa-lg"></i>
+                                    </div>
+                                    <div class="w-100">
+                                        <span class="d-block text-uppercase text-muted small fw-bold tracking-wider mb-2">Email Inquiries</span>
+                                        <div class="d-flex flex-column gap-2">
+                                            <a href="mailto:skumar@essarengg.com.sg" class="text-decoration-none email-pill-link d-flex align-items-center justify-content-between p-2 rounded-3 border bg-white transition">
+                                                <span class="text-dark small"><i class="fas fa-user-tie me-2 text-muted"></i>S. Kumar</span>
+                                                <span class="font-monospace text-muted small">skumar@essarengg.com.sg <i class="fas fa-external-link-alt ms-1 text-primary small opacity-50"></i></span>
+                                            </a>
+                                            <a href="mailto:bkj@essarengg.com.sg" class="text-decoration-none email-pill-link d-flex align-items-center justify-content-between p-2 rounded-3 border bg-white transition">
+                                                <span class="text-dark small"><i class="fas fa-user-cog me-2 text-muted"></i>B.K.J.</span>
+                                                <span class="font-monospace text-muted small">bkj@essarengg.com.sg <i class="fas fa-external-link-alt ms-1 text-primary small opacity-50"></i></span>
+                                            </a>
+                                            <a href="mailto:gerry@essarengg.com.sg" class="text-decoration-none email-pill-link d-flex align-items-center justify-content-between p-2 rounded-3 border bg-white transition">
+                                                <span class="text-dark small"><i class="fas fa-user me-2 text-muted"></i>Gerry</span>
+                                                <span class="font-monospace text-muted small">gerry@essarengg.com.sg <i class="fas fa-external-link-alt ms-1 text-primary small opacity-50"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -263,8 +296,3 @@
     <script src="js/main.js"></script>
 </body>
 </html>
-
-
-
-
-
