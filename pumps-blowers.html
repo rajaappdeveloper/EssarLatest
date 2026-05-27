@@ -67,7 +67,13 @@
                 <img src="images/logo/essar-engg-logo.png" alt="Essar Engineering" style="height: 40px; background: white; padding: 5px; border-radius: 4px;">
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- Mobile Theme Toggle & Brochure Link (Always Outside Collapse) -->
+            <div class="d-flex align-items-center ms-auto me-3 d-lg-none">
+                <a href="https://essarengg.com.sg/essar-brochure.pdf" target="_blank" class="text-white fs-4 me-2" title="Download Brochure"><i class="fas fa-file-pdf"></i></a>
+                <button class="btn btn-sm btn-outline-secondary rounded-circle theme-toggle-btn" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-color: rgba(255,255,255,0.4); color: white;" title="Toggle Dark/Light Mode"><i class="fas fa-moon"></i></button>
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -114,10 +120,9 @@
                         <a class="nav-link" href="contact-us.html"><i class="fas fa-envelope me-2"></i>Contact</a>
                     </li>
                 </ul>
-                <div class="d-flex align-items-center">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSer4U6WPapZ5XHBWiyMpfIh69OKmxI6jo19H05zmBLKvn5XxA/viewform" target="_blank" class="btn btn-quote me-3 rounded-pill shadow-sm">GET A QUOTE</a>
+                <div class="d-flex align-items-center d-none d-lg-flex">
                     <a href="https://essarengg.com.sg/essar-brochure.pdf" target="_blank" class="text-white fs-4" title="Download Brochure"><i class="fas fa-file-pdf"></i></a>
-                    <button id="theme-toggle" class="btn btn-sm btn-outline-secondary ms-2 rounded-circle" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-color: rgba(255,255,255,0.4); color: white;" title="Toggle Dark/Light Mode"><i class="fas fa-moon"></i></button>
+                    <button class="btn btn-sm btn-outline-secondary ms-2 rounded-circle theme-toggle-btn" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-color: rgba(255,255,255,0.4); color: white;" title="Toggle Dark/Light Mode"><i class="fas fa-moon"></i></button>
                 </div>
             </div>
         </div>

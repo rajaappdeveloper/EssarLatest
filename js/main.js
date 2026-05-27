@@ -157,37 +157,41 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Dark Theme Toggler Logic
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', function() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            if (currentTheme === 'dark') {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-                updateToggleIcon('light');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                updateToggleIcon('dark');
-            }
+    const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+    if (themeToggleBtns.length > 0) {
+        themeToggleBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                if (currentTheme === 'dark') {
+                    document.documentElement.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                    updateToggleIcons('light');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                    updateToggleIcons('dark');
+                }
+            });
         });
 
         // Initialize toggle button icon
         const activeTheme = document.documentElement.getAttribute('data-theme') || 'light';
-        updateToggleIcon(activeTheme);
+        updateToggleIcons(activeTheme);
     }
 
-    function updateToggleIcon(theme) {
-        const icon = themeToggleBtn.querySelector('i');
-        if (icon) {
-            if (theme === 'dark') {
-                icon.className = 'fas fa-sun';
-                themeToggleBtn.title = 'Switch to Light Mode';
-            } else {
-                icon.className = 'fas fa-moon';
-                themeToggleBtn.title = 'Switch to Dark Mode';
+    function updateToggleIcons(theme) {
+        themeToggleBtns.forEach(btn => {
+            const icon = btn.querySelector('i');
+            if (icon) {
+                if (theme === 'dark') {
+                    icon.className = 'fas fa-sun';
+                    btn.title = 'Switch to Light Mode';
+                } else {
+                    icon.className = 'fas fa-moon';
+                    btn.title = 'Switch to Dark Mode';
+                }
             }
-        }
+        });
     }
 
     // Handle mobile sub-dropdown toggling
@@ -202,5 +206,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Dynamically adjust the timeline vertical track line
+    function adjustTimelineLine() {
+        const tracker = document.querySelector('.timeline-tracker');
+        const trackLine = document.querySelector('.timeline-track-line');
+        if (!tracker || !trackLine) return;
+        
+        const firstNode = tracker.querySelector('.timeline-step-1 .timeline-node');
+        const lastNode = tracker.querySelector('.timeline-step-4 .timeline-node');
+        if (!firstNode || !lastNode) return;
+        
+        const trackerRect = tracker.getBoundingClientRect();
+        const firstRect = firstNode.getBoundingClientRect();
+        const lastRect = lastNode.getBoundingClientRect();
+        
+        // Calculate offsets relative to the parent tracker container
+        const topOffset = (firstRect.top + firstRect.height / 2) - trackerRect.top;
+        const bottomOffset = (lastRect.top + lastRect.height / 2) - trackerRect.top;
+        
+        trackLine.style.top = `${topOffset}px`;
+        trackLine.style.height = `${bottomOffset - topOffset}px`;
+    }
+
+    // Run the alignment calculations
+    adjustTimelineLine();
+    window.addEventListener('resize', adjustTimelineLine);
+    window.addEventListener('load', adjustTimelineLine);
 });
 
