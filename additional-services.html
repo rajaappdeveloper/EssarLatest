@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Additional Services | Essar Engineering Pte Ltd</title>
-    <meta name="description" content="Additional engineering and builder support services by Essar Engineering in Singapore. Concrete coring, metal refurbishment, custom brackets fabrication, and emergency site repairs.">
-    
+    <meta name="description"
+        content="Additional engineering and builder support services by Essar Engineering in Singapore. Concrete coring, metal refurbishment, custom brackets fabrication, and emergency site repairs.">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="preloader-active">
 
-        <!-- Landing Preloader -->
+    <!-- Landing Preloader -->
     <div id="landing-preloader" class="landing-preloader">
         <div class="preloader-content text-center">
             <div class="preloader-logo-container">
@@ -35,98 +38,183 @@
     <!-- Frozen Header -->
     <header class="sticky-top shadow-sm header-frozen">
         <div class="top-header bg-light py-2 border-bottom d-none d-lg-block">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo/essar-engg-logo.png" alt="Essar Engineering Pte Ltd" style="height: 60px;">
-                </a>
-            </div>
-            <div class="contact-info d-flex align-items-center text-muted small">
-                <div class="me-4 d-flex align-items-center">
-                    <img src="images/essar-certificates.jpg" alt="Certificates" style="height: 50px;">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo/essar-engg-logo.png" alt="Essar Engineering Pte Ltd"
+                            style="height: 60px;">
+                    </a>
                 </div>
-                <div>
-                    <p class="mb-0 fw-bold"><i class="fas fa-map-marker-alt me-2 text-primary"></i> 158 Pandan loop, Singapore 128356.</p>
-                    <p class="mb-0">
-                        <i class="fas fa-envelope me-2 text-primary"></i> <a href="mailto:skumar@essarengg.com.sg" class="text-decoration-none text-muted">skumar@essarengg.com.sg</a> |
-                        <a href="mailto:bkj@essarengg.com.sg" class="text-decoration-none text-muted">bkj@essarengg.com.sg</a> |
-                        <a href="mailto:gerry@essarengg.com.sg" class="text-decoration-none text-muted">gerry@essarengg.com.sg</a>
-                    </p>
-                    <p class="mb-0"><i class="fas fa-phone me-2 text-primary"></i> (+65) 6777 2455 <span class="ms-3"><i class="fas fa-fax me-2 text-primary"></i> (+65) 6777 2598</span></p>
+                <div class="contact-info d-flex align-items-center gap-4 text-muted small">
+                    <!-- Certificates Container -->
+                    <div class="me-2 d-flex align-items-center">
+                        <img src="images/essar-certificates.jpg" alt="Certificates"
+                            style="height: 48px; border-radius: 4px; border: 1px solid #e0e0e0; padding: 2px; background: #fff;">
+                    </div>
+
+                    <!-- Contact Block: Address -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <span class="contact-label">Visit Us</span>
+                            <a href="https://maps.google.com/?q=158+Pandan+Loop,+Singapore+128356" target="_blank"
+                                class="contact-value">158 Pandan loop, SG 128356</a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Block: Call & Fax -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone "></i>
+                        </div>
+                        <div class="contact-details">
+                            <span class="contact-label">Call / Fax</span>
+                            <span class="contact-value" style="color: #2b2d31; font-weight: 600;">(+65) 6777 2455 /
+                                2598</span>
+                        </div>
+                    </div>
+
+                    <!-- Contact Block: Emails Dropdown -->
+                    <div class="contact-item dropdown">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="cursor: pointer;">
+                            <span class="contact-label">Email Us <i class="fas fa-chevron-down ms-1"
+                                    style="font-size: 0.6rem;"></i></span>
+                            <span class="contact-value">skumar@essarengg.com.sg</span>
+                        </div>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-sm border border-light py-2"
+                            style="font-size: 0.85rem; border-radius: 8px; z-index: 1050;">
+                            <li class="px-3 py-1 text-muted fw-bold text-uppercase"
+                                style="font-size: 0.72rem; letter-spacing: 0.5px;">Direct Emails</li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item d-flex align-items-center gap-2"
+                                    href="mailto:skumar@essarengg.com.sg"><i class="fas fa-user-tie text-muted"
+                                        style="width: 14px;"></i> skumar@essarengg.com.sg <span
+                                        class="badge bg-primary ms-auto">S. Kumar</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center gap-2"
+                                    href="mailto:bkj@essarengg.com.sg"><i class="fas fa-user text-muted"
+                                        style="width: 14px;"></i> bkj@essarengg.com.sg <span
+                                        class="badge bg-secondary ms-auto">B.K.J</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center gap-2"
+                                    href="mailto:gerry@essarengg.com.sg"><i class="fas fa-user text-muted"
+                                        style="width: 14px;"></i> gerry@essarengg.com.sg <span
+                                        class="badge bg-secondary ms-auto">Gerry</span></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-        
+
         <!-- Navigation Menu -->
         <nav class="navbar navbar-expand-lg navbar-dark material-nav">
-            
-        <div class="container">
-            <!-- Mobile Logo -->
-            <a class="navbar-brand d-lg-none" href="index.html">
-                <img src="images/logo/essar-engg-logo.png" alt="Essar Engineering" style="height: 40px; background: white; padding: 5px; border-radius: 4px;">
-            </a>
-            
-            <!-- Mobile Theme Toggle & Brochure Link (Always Outside Collapse) -->
-            <div class="d-flex align-items-center ms-auto me-3 d-lg-none">
-                <a href="https://essarengg.com.sg/essar-brochure.pdf" target="_blank" class="text-white fs-4 me-2" title="Download Brochure"><i class="fas fa-file-pdf"></i></a>
-                <button class="btn btn-sm btn-outline-secondary rounded-circle theme-toggle-btn" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-color: rgba(255,255,255,0.4); color: white;" title="Toggle Dark/Light Mode"><i class="fas fa-moon"></i></button>
-            </div>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-uppercase fw-medium">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-home me-2"></i>Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="fabDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-hammer me-2"></i>Fabrication</a>
-                        <ul class="dropdown-menu material-dropdown" aria-labelledby="fabDropdown">
-                            <li><a class="dropdown-item" href="construction-industry-fabrication.html"><i class="fas fa-building me-2"></i>Construction Industry</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li class="dropdown-submenu dropdown">
-                                <a class="dropdown-item dropdown-toggle-submenu" href="process-industry-fabrication.html"><i class="fas fa-industry me-2"></i><strong>Process Industry</strong></a>
-                                <ul class="dropdown-menu material-dropdown submenu-menu">
-                                    <li><a class="dropdown-item" href="process-equipments.html"><i class="fas fa-cogs me-2"></i>Process Equipments</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="valves.html"><i class="fas fa-circle-notch me-2"></i>Valves</a></li>
-                                </ul>
-                            </li>
-                                                        <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="clean-room-works.html"><i class="fas fa-broom me-2"></i>Clean Room Works</a></li>
-                            <li><a class="dropdown-item" href="food-beverage-industry-fabrication.html"><i class="fas fa-utensils me-2"></i>Food & Beverage Industry</a></li>
-                            <li><a class="dropdown-item" href="machined-components.html"><i class="fas fa-cog me-2"></i>Machined Components</a></li>
-                        </ul>
-                    </li>
-                                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="servDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-tools me-2"></i>Services</a>
-                        <ul class="dropdown-menu material-dropdown" aria-labelledby="servDropdown">
-                            <li><a class="dropdown-item" href="onsite-services.html"><i class="fas fa-hard-hat me-2"></i>Onsite Services</a></li>
-                            <li><a class="dropdown-item" href="electrical-mechanical-services.html"><i class="fas fa-bolt me-2"></i>M & E Projects</a></li>
-                            <li><a class="dropdown-item" href="architectural-works.html"><i class="fas fa-pencil-ruler me-2"></i>Architectural Works</a></li>
-                            <li><a class="dropdown-item" href="civil-structural-works.html"><i class="fas fa-road me-2"></i>Civil & Structural Works</a></li>
-                            <li><a class="dropdown-item" href="mechanical-electrical-works.html"><i class="fas fa-plug me-2"></i>Mechanical & Electrical Works</a></li>
-                            <li><a class="dropdown-item" href="construction-maintenance-services.html"><i class="fas fa-wrench me-2"></i>Maintenance Services</a></li>
-                            <li><a class="dropdown-item active" href="additional-services.html"><i class="fas fa-plus-circle me-2"></i>Additional Services</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about-essar-engineering-pte-ltd.html"><i class="fas fa-id-card me-2"></i>Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact-us.html"><i class="fas fa-envelope me-2"></i>Contact</a>
-                    </li>
-                </ul>
-                <div class="d-flex align-items-center d-none d-lg-flex">
-                    <a href="https://essarengg.com.sg/essar-brochure.pdf" target="_blank" class="text-white fs-4" title="Download Brochure"><i class="fas fa-file-pdf"></i></a>
-                    <button class="btn btn-sm btn-outline-secondary ms-2 rounded-circle theme-toggle-btn" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-color: rgba(255,255,255,0.4); color: white;" title="Toggle Dark/Light Mode"><i class="fas fa-moon"></i></button>
+
+            <div class="container">
+                <!-- Mobile Logo -->
+                <a class="navbar-brand d-lg-none" href="index.html">
+                    <img src="images/logo/essar-engg-logo.png" alt="Essar Engineering"
+                        style="height: 40px; background: white; padding: 5px; border-radius: 4px;">
+                </a>
+
+                <!-- Mobile Theme Toggle & Brochure Link (Always Outside Collapse) -->
+                <div class="d-flex align-items-center ms-auto me-3 d-lg-none">
+                    <a href="https://essarengg.com.sg/essar-brochure.pdf" target="_blank" class="text-white fs-4 me-2"
+                        title="Download Brochure"><i class="fas fa-file-pdf"></i></a>
+                    <button class="btn btn-sm btn-outline-secondary rounded-circle theme-toggle-btn"
+                        style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-color: rgba(255,255,255,0.4); color: white;"
+                        title="Toggle Dark/Light Mode"><i class="fas fa-moon"></i></button>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-uppercase fw-medium">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="fas fa-home me-2"></i>Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="fabDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i
+                                    class="fas fa-hammer me-2"></i>Fabrication</a>
+                            <ul class="dropdown-menu material-dropdown" aria-labelledby="fabDropdown">
+                                <li><a class="dropdown-item" href="construction-industry-fabrication.html"><i
+                                            class="fas fa-building me-2"></i>Construction Industry</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="dropdown-submenu dropdown">
+                                    <a class="dropdown-item dropdown-toggle-submenu"
+                                        href="process-industry-fabrication.html"><i
+                                            class="fas fa-industry me-2"></i><strong>Process Industry</strong></a>
+                                    <ul class="dropdown-menu material-dropdown submenu-menu">
+                                        <li><a class="dropdown-item" href="process-equipments.html"><i
+                                                    class="fas fa-cogs me-2"></i>Process Equipments</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="valves.html"><i
+                                                    class="fas fa-circle-notch me-2"></i>Valves</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="clean-room-works.html"><i
+                                            class="fas fa-broom me-2"></i>Clean Room Works</a></li>
+                                <li><a class="dropdown-item" href="food-beverage-industry-fabrication.html"><i
+                                            class="fas fa-utensils me-2"></i>Food & Beverage Industry</a></li>
+                                <li><a class="dropdown-item" href="machined-components.html"><i
+                                            class="fas fa-cog me-2"></i>Machined Components</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="servDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i
+                                    class="fas fa-tools me-2"></i>Services</a>
+                            <ul class="dropdown-menu material-dropdown" aria-labelledby="servDropdown">
+                                <li><a class="dropdown-item" href="onsite-services.html"><i
+                                            class="fas fa-hard-hat me-2"></i>Onsite Services</a></li>
+                                <li><a class="dropdown-item" href="electrical-mechanical-services.html"><i
+                                            class="fas fa-bolt me-2"></i>M & E Projects</a></li>
+                                <li><a class="dropdown-item" href="architectural-works.html"><i
+                                            class="fas fa-pencil-ruler me-2"></i>Architectural Works</a></li>
+                                <li><a class="dropdown-item" href="civil-structural-works.html"><i
+                                            class="fas fa-road me-2"></i>Civil & Structural Works</a></li>
+                                <li><a class="dropdown-item" href="mechanical-electrical-works.html"><i
+                                            class="fas fa-plug me-2"></i>Mechanical & Electrical Works</a></li>
+                                <li><a class="dropdown-item" href="construction-maintenance-services.html"><i
+                                            class="fas fa-wrench me-2"></i>Maintenance Services</a></li>
+                                <li><a class="dropdown-item active" href="additional-services.html"><i
+                                            class="fas fa-plus-circle me-2"></i>Additional Services</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-essar-engineering-pte-ltd.html"><i
+                                    class="fas fa-id-card me-2"></i>Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact-us.html"><i class="fas fa-envelope me-2"></i>Contact</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center d-none d-lg-flex">
+                        <a href="https://essarengg.com.sg/essar-brochure.pdf" target="_blank" class="text-white fs-4"
+                            title="Download Brochure"><i class="fas fa-file-pdf"></i></a>
+                        <button class="btn btn-sm btn-outline-secondary ms-2 rounded-circle theme-toggle-btn"
+                            style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-color: rgba(255,255,255,0.4); color: white;"
+                            title="Toggle Dark/Light Mode"><i class="fas fa-moon"></i></button>
+                    </div>
                 </div>
             </div>
-        </div>
-    
+
         </nav>
     </header>
 
@@ -149,21 +237,30 @@
                         <div class="sidebar-widget">
                             <h5 class="sidebar-title">Our Solutions</h5>
                             <ul class="sidebar-nav">
-                                <li><a href="onsite-services.html"><i class="fas fa-hard-hat me-2"></i>Onsite Services</a></li>
-                                <li><a href="electrical-mechanical-services.html"><i class="fas fa-bolt me-2"></i>M & E Projects</a></li>
-                                <li><a href="architectural-works.html"><i class="fas fa-pencil-ruler me-2"></i>Architectural Works</a></li>
-                                <li><a href="civil-structural-works.html"><i class="fas fa-road me-2"></i>Civil & Structural Works</a></li>
-                                <li><a href="mechanical-electrical-works.html"><i class="fas fa-plug me-2"></i>Mechanical & Electrical Works</a></li>
-                                <li><a href="construction-maintenance-services.html"><i class="fas fa-wrench me-2"></i>Maintenance Services</a></li>
-                                <li class="active"><a href="additional-services.html"><i class="fas fa-plus-circle me-2"></i>Additional Services</a></li>
+                                <li><a href="onsite-services.html"><i class="fas fa-hard-hat me-2"></i>Onsite
+                                        Services</a></li>
+                                <li><a href="electrical-mechanical-services.html"><i class="fas fa-bolt me-2"></i>M & E
+                                        Projects</a></li>
+                                <li><a href="architectural-works.html"><i
+                                            class="fas fa-pencil-ruler me-2"></i>Architectural Works</a></li>
+                                <li><a href="civil-structural-works.html"><i class="fas fa-road me-2"></i>Civil &
+                                        Structural Works</a></li>
+                                <li><a href="mechanical-electrical-works.html"><i
+                                            class="fas fa-plug me-2"></i>Mechanical & Electrical Works</a></li>
+                                <li><a href="construction-maintenance-services.html"><i
+                                            class="fas fa-wrench me-2"></i>Maintenance Services</a></li>
+                                <li class="active"><a href="additional-services.html"><i
+                                            class="fas fa-plus-circle me-2"></i>Additional Services</a></li>
                             </ul>
                         </div>
-                        
+
                         <div class="sidebar-widget pt-0">
                             <div class="brochure-card text-center">
                                 <h5 class="fw-bold mb-3">Builder Support</h5>
-                                <p class="small opacity-75 mb-4">From custom fittings to minor civil modifications, we supply reliable ad-hoc services for any site engineering needs.</p>
-                                <a href="contact-us.html"><i class="fas fa-envelope me-2"></i> REQUEST A CONSULTATION</a>
+                                <p class="small opacity-75 mb-4">From custom fittings to minor civil modifications, we
+                                    supply reliable ad-hoc services for any site engineering needs.</p>
+                                <a href="contact-us.html"><i class="fas fa-envelope me-2"></i> REQUEST A
+                                    CONSULTATION</a>
                             </div>
                         </div>
                     </div>
@@ -172,20 +269,32 @@
                 <!-- Main Content -->
                 <div class="col-lg-8 order-lg-2">
                     <div class="service-content">
-                        <img src="images/onsite-service4.jpg" alt="Additional engineering support services Singapore" class="img-fluid rounded-4 shadow-sm mb-4">
-                        
-                        <h2 class="border-start border-primary border-4 ps-3">Additional Builder & Engineering Support Services</h2>
-                        <p class="lead text-muted mb-4"><b><i>Essar Engineering Pte. Ltd.</i></b> provides a comprehensive suite of ancillary and specialized support services to ensure all project integrations are finished to perfection. Equipped with advanced machinery and a highly adaptive team, we tackle structural alterations, surface repairs, and customized fittings with ease.</p>
-                        
+                        <img src="images/onsite-service4.jpg" alt="Additional engineering support services Singapore"
+                            class="img-fluid rounded-4 shadow-sm mb-4">
+
+                        <h2 class="border-start border-primary border-4 ps-3">Additional Builder & Engineering Support
+                            Services</h2>
+                        <p class="lead text-muted mb-4"><b><i>Essar Engineering Pte. Ltd.</i></b> provides a
+                            comprehensive suite of ancillary and specialized support services to ensure all project
+                            integrations are finished to perfection. Equipped with advanced machinery and a highly
+                            adaptive team, we tackle structural alterations, surface repairs, and customized fittings
+                            with ease.</p>
+
                         <div class="row g-4 mb-5">
                             <div class="col-md-12">
                                 <div class="bg-light p-4 rounded-4 shadow-sm">
                                     <h4 class="fw-bold mb-3">Ad-Hoc Engineering Scope</h4>
                                     <ul class="list-unstyled">
-                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Custom bracket, base plate, adaptor, and support hanger fabrication.</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Concrete core drilling, floor slab cutting, and wall coring for pipe and duct penetrations.</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> On-call site welding services and emergency metallic structure repairs.</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Specialized corrosion control, metal sandblasting, and structural painting.</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Custom
+                                            bracket, base plate, adaptor, and support hanger fabrication.</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Concrete
+                                            core drilling, floor slab cutting, and wall coring for pipe and duct
+                                            penetrations.</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> On-call
+                                            site welding services and emergency metallic structure repairs.</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>
+                                            Specialized corrosion control, metal sandblasting, and structural painting.
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -195,7 +304,11 @@
                             <h3 class="fw-bold mb-3">Versatile Site Support Solutions</h3>
                             <div class="row align-items-center g-4">
                                 <div class="col-md-6">
-                                    <p>We understand that construction and plant setup projects often require highly adaptive, minor modifications that fall outside of major tender scopes. Essar Engineering acts as your reliable builder partner, offering fast response times, proper safety risk assessments, and robust workmanship for all minor builder works, pipeline leak repairs, and equipment modifications.</p>
+                                    <p>We understand that construction and plant setup projects often require highly
+                                        adaptive, minor modifications that fall outside of major tender scopes. Essar
+                                        Engineering acts as your reliable builder partner, offering fast response times,
+                                        proper safety risk assessments, and robust workmanship for all minor builder
+                                        works, pipeline leak repairs, and equipment modifications.</p>
                                     <p>Our rapid site-support highlights:</p>
                                     <div class="d-flex flex-wrap gap-2">
                                         <span class="badge bg-primary px-3 py-2">Quick Response Dispatch</span>
@@ -205,7 +318,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="images/onsite-service2.jpg" alt="Onsite welding site support Singapore" class="img-fluid rounded shadow-sm">
+                                    <img src="images/onsite-service2.jpg" alt="Onsite welding site support Singapore"
+                                        class="img-fluid rounded shadow-sm">
                                 </div>
                             </div>
                         </div>
@@ -215,7 +329,10 @@
                                 <i class="fas fa-info-circle fa-2x me-3"></i>
                                 <div>
                                     <h5 class="fw-bold">Seamless Project Integrations</h5>
-                                    <p class="mb-0">All our builder and core-cutting services are executed with modern low-vibration and dust-controlled equipment, maintaining the integrity of adjacent structures and avoiding disturbance to active commercial or clean-room facilities.</p>
+                                    <p class="mb-0">All our builder and core-cutting services are executed with modern
+                                        low-vibration and dust-controlled equipment, maintaining the integrity of
+                                        adjacent structures and avoiding disturbance to active commercial or clean-room
+                                        facilities.</p>
                                 </div>
                             </div>
                         </div>
@@ -232,52 +349,69 @@
                 <!-- About Widget -->
                 <div class="col-xl-4 col-lg-4 col-md-6">
                     <h5 class="text-uppercase fw-bold mb-4 text-white letter-spacing-1">Essar Engineering Pte. Ltd</h5>
-                    <p class="text-light opacity-75 mb-4 lh-lg">Fabrication for Construction industry, Process plants, skids and Piping Works. Onsite Repairs, Installation, Erection services for Process industries and construction Industry.</p>
+                    <p class="text-light opacity-75 mb-4 lh-lg">Fabrication for Construction industry, Process plants,
+                        skids and Piping Works. Onsite Repairs, Installation, Erection services for Process industries
+                        and construction Industry.</p>
                     <div class="d-flex align-items-center contact-widget p-3 rounded">
                         <i class="fas fa-phone fa-2x text-white me-3 opacity-75"></i>
                         <div>
                             <span class="d-block small text-light opacity-75 text-uppercase">Any Queries</span>
-                            <a href="tel:+6567772455" class="text-white fw-bold text-decoration-none fs-5">(+65) 6777 2455</a>
+                            <a href="tel:+6567772455" class="text-white fw-bold text-decoration-none fs-5">(+65) 6777
+                                2455</a>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-xl-1 d-none d-xl-block"></div>
-                
+
                 <!-- Products Links -->
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <h5 class="text-uppercase fw-bold mb-4 text-white letter-spacing-1">Products</h5>
                     <ul class="list-unstyled footer-links">
-                        <li class="mb-3"><a href="process-equipments.html" class="text-light opacity-75 text-decoration-none"><i class="fas fa-angle-right me-2"></i> Process Equipments</a></li>
-                        <li class="mb-3"><a href="pumps-blowers.html" class="text-light opacity-75 text-decoration-none"><i class="fas fa-angle-right me-2"></i> Pumps & Spares</a></li>
-                        <li class="mb-3"><a href="valves.html" class="text-light opacity-75 text-decoration-none"><i class="fas fa-angle-right me-2"></i> Valves</a></li>
-                        <li class="mb-3"><a href="pipes-pipe-fittings.html" class="text-light opacity-75 text-decoration-none"><i class="fas fa-angle-right me-2"></i> Pipes & Fittings</a></li>
+                        <li class="mb-3"><a href="process-equipments.html"
+                                class="text-light opacity-75 text-decoration-none"><i
+                                    class="fas fa-angle-right me-2"></i> Process Equipments</a></li>
+                        <li class="mb-3"><a href="valves.html" class="text-light opacity-75 text-decoration-none"><i
+                                    class="fas fa-angle-right me-2"></i> Valves</a></li>
                     </ul>
                 </div>
-                
+
                 <!-- Services Links -->
                 <div class="col-xl-4 col-lg-4 col-md-6">
                     <h5 class="text-uppercase fw-bold mb-4 text-white letter-spacing-1">Services</h5>
                     <ul class="list-unstyled footer-links">
-                        <li class="mb-3"><a href="construction-industry-fabrication.html" class="text-light opacity-75 text-decoration-none"><i class="fas fa-angle-right me-2"></i> Construction Industry Fabrication</a></li>
-                        <li class="mb-3"><a href="onsite-services.html" class="text-light opacity-75 text-decoration-none"><i class="fas fa-angle-right me-2"></i> Site Services</a></li>
-                        <li class="mb-3"><a href="construction-maintenance-services.html" class="text-light opacity-75 text-decoration-none"><i class="fas fa-angle-right me-2"></i> Maintenance Services</a></li>
-                        <li class="mb-3"><a href="clean-room-works.html" class="text-light opacity-75 text-decoration-none"><i class="fas fa-angle-right me-2"></i> Clean Room Works</a></li>
+                        <li class="mb-3"><a href="construction-industry-fabrication.html"
+                                class="text-light opacity-75 text-decoration-none"><i
+                                    class="fas fa-angle-right me-2"></i> Construction Industry Fabrication</a></li>
+                        <li class="mb-3"><a href="onsite-services.html"
+                                class="text-light opacity-75 text-decoration-none"><i
+                                    class="fas fa-angle-right me-2"></i> Site Services</a></li>
+                        <li class="mb-3"><a href="construction-maintenance-services.html"
+                                class="text-light opacity-75 text-decoration-none"><i
+                                    class="fas fa-angle-right me-2"></i> Maintenance Services</a></li>
+                        <li class="mb-3"><a href="clean-room-works.html"
+                                class="text-light opacity-75 text-decoration-none"><i
+                                    class="fas fa-angle-right me-2"></i> Clean Room Works</a></li>
                     </ul>
                 </div>
             </div>
-            
+
             <hr class="border-light opacity-25 my-4">
-            
+
             <div class="row align-items-center pb-2">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <p class="mb-0 text-light opacity-75 small">&copy; Copyright 2026. ESSAR ENGINEERING PTE. LTD. All Rights Reserved.</p>
+                    <p class="mb-0 text-light opacity-75 small">&copy; Copyright 2026. ESSAR ENGINEERING PTE. LTD. All
+                        Rights Reserved.</p>
                 </div>
                 <div class="col-md-6">
                     <ul class="list-inline mb-0 text-center text-md-end">
-                        <li class="list-inline-item me-4"><a href="about-essar-engineering-pte-ltd.html" class="text-light opacity-75 text-decoration-none small text-uppercase">About</a></li>
-                        <li class="list-inline-item me-4"><a href="process-industry-fabrication.html" class="text-light opacity-75 text-decoration-none small text-uppercase">Products</a></li>
-                        <li class="list-inline-item"><a href="contact-us.html" class="text-light opacity-75 text-decoration-none small text-uppercase">Contact</a></li>
+                        <li class="list-inline-item me-4"><a href="about-essar-engineering-pte-ltd.html"
+                                class="text-light opacity-75 text-decoration-none small text-uppercase">About</a></li>
+                        <li class="list-inline-item me-4"><a href="process-industry-fabrication.html"
+                                class="text-light opacity-75 text-decoration-none small text-uppercase">Products</a>
+                        </li>
+                        <li class="list-inline-item"><a href="contact-us.html"
+                                class="text-light opacity-75 text-decoration-none small text-uppercase">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -291,13 +425,9 @@
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- Custom JS -->
     <script src="js/main.js"></script>
 </body>
+
 </html>
-
-
-
-
-
