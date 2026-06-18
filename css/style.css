@@ -560,10 +560,18 @@ p {
 }
 
 .sidebar-nav li a:hover,
-.sidebar-nav li.active a {
-    background-color: #0A2A88;
-    color: #fff;
+.sidebar-nav li.active a,
+.sidebar-nav a.active {
+    background-color: #0A2A88 !important;
+    color: #fff !important;
     padding-left: 25px;
+}
+
+.sidebar-nav a:hover i,
+.sidebar-nav a.active i,
+.sidebar-nav a:hover span,
+.sidebar-nav a.active span {
+    color: #fff !important;
 }
 
 .brochure-card {
@@ -1022,9 +1030,17 @@ body {
 }
 
 [data-theme="dark"] .sidebar-nav li a:hover,
-[data-theme="dark"] .sidebar-nav li.active a {
-    background: linear-gradient(to right, #0A2A88, #59CDE9);
-    color: #ffffff;
+[data-theme="dark"] .sidebar-nav li.active a,
+[data-theme="dark"] .sidebar-nav a.active {
+    background: linear-gradient(to right, #0A2A88, #59CDE9) !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .sidebar-nav a:hover i,
+[data-theme="dark"] .sidebar-nav a.active i,
+[data-theme="dark"] .sidebar-nav a:hover span,
+[data-theme="dark"] .sidebar-nav a.active span {
+    color: #ffffff !important;
 }
 
 [data-theme="dark"] .material-dropdown {

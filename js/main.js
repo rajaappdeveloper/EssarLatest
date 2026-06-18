@@ -260,5 +260,48 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
+
+    // Automatically expand sidebar menu based on current URL
+    const sidebarLinks = document.querySelectorAll('#sidebarAccordion a:not([data-bs-toggle="collapse"])');
+    sidebarLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (linkHref === currentPath) {
+            link.classList.remove('text-muted');
+            link.classList.add('active', 'fw-bold');
+            
+            // Expand parent collapse
+            const parentCollapse = link.closest('.collapse');
+            if (parentCollapse) {
+                parentCollapse.classList.add('show');
+                const toggleBtn = document.querySelector(`[href="#${parentCollapse.id}"]`);
+                if (toggleBtn) {
+                    toggleBtn.setAttribute('aria-expanded', 'true');
+                    const icon = toggleBtn.querySelector('.fa-chevron-down');
+                    if (icon) {
+                        icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                    }
+                }
+            }
+        }
+    });
+
+    // Handle chevron icon toggle on click for sidebar
+    const collapses = document.querySelectorAll('#sidebarAccordion .collapse');
+    collapses.forEach(collapse => {
+        collapse.addEventListener('show.bs.collapse', function () {
+            const toggleBtn = document.querySelector(`[href="#${this.id}"]`);
+            if (toggleBtn) {
+                const icon = toggleBtn.querySelector('.fa-chevron-down');
+                if (icon) icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+            }
+        });
+        collapse.addEventListener('hide.bs.collapse', function () {
+            const toggleBtn = document.querySelector(`[href="#${this.id}"]`);
+            if (toggleBtn) {
+                const icon = toggleBtn.querySelector('.fa-chevron-up');
+                if (icon) icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+            }
+        });
+    });
 });
 
