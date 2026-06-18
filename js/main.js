@@ -233,5 +233,32 @@ document.addEventListener('DOMContentLoaded', function () {
     adjustTimelineLine();
     window.addEventListener('resize', adjustTimelineLine);
     window.addEventListener('load', adjustTimelineLine);
+
+    // Automatically set active nav link based on current URL
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item');
+    navLinks.forEach(link => {
+        // Remove active class from all first (just in case they were hardcoded)
+        link.classList.remove('active');
+        
+        const linkHref = link.getAttribute('href');
+        if (linkHref === currentPath) {
+            link.classList.add('active');
+            
+            // If it's inside a dropdown, also make the parent dropdown active
+            const parentDropdown = link.closest('.dropdown');
+            if (parentDropdown) {
+                const parentToggle = parentDropdown.querySelector('.nav-link.dropdown-toggle');
+                if (parentToggle) parentToggle.classList.add('active');
+            }
+            
+            // If it's a submenu, make parent submenu active
+            const parentSubmenu = link.closest('.dropdown-submenu');
+            if (parentSubmenu) {
+                const submenuToggle = parentSubmenu.querySelector('.dropdown-toggle-submenu');
+                if (submenuToggle) submenuToggle.classList.add('active');
+            }
+        }
+    });
 });
 
