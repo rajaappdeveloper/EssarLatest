@@ -1151,21 +1151,11 @@ body {
 }
 
 /* Step Delays */
-.timeline-step-1 {
-    animation-delay: 0.2s;
-}
-
-.timeline-step-2 {
-    animation-delay: 1.4s;
-}
-
-.timeline-step-3 {
-    animation-delay: 2.6s;
-}
-
-.timeline-step-4 {
-    animation-delay: 3.8s;
-}
+.timeline-step-1 { animation-delay: 0.2s; }
+.timeline-step-2 { animation-delay: 1.4s; }
+.timeline-step-3 { animation-delay: 2.6s; }
+.timeline-step-4 { animation-delay: 3.8s; }
+.timeline-step-5 { animation-delay: 5.0s; }
 
 @keyframes fadeInStep {
     to {
@@ -1195,21 +1185,11 @@ body {
     animation: popNode 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-.timeline-step-1 .timeline-node {
-    animation-delay: 0.5s;
-}
-
-.timeline-step-2 .timeline-node {
-    animation-delay: 1.7s;
-}
-
-.timeline-step-3 .timeline-node {
-    animation-delay: 2.9s;
-}
-
-.timeline-step-4 .timeline-node {
-    animation-delay: 4.1s;
-}
+.timeline-step-1 .timeline-node { animation-delay: 0.5s; }
+.timeline-step-2 .timeline-node { animation-delay: 1.7s; }
+.timeline-step-3 .timeline-node { animation-delay: 2.9s; }
+.timeline-step-4 .timeline-node { animation-delay: 4.1s; }
+.timeline-step-5 .timeline-node { animation-delay: 5.3s; }
 
 @keyframes popNode {
     to {
@@ -1263,21 +1243,11 @@ body {
     animation: slideInCard 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-.timeline-step-1 .timeline-content-card {
-    animation-delay: 0.7s;
-}
-
-.timeline-step-2 .timeline-content-card {
-    animation-delay: 1.9s;
-}
-
-.timeline-step-3 .timeline-content-card {
-    animation-delay: 3.1s;
-}
-
-.timeline-step-4 .timeline-content-card {
-    animation-delay: 4.3s;
-}
+.timeline-step-1 .timeline-content-card { animation-delay: 0.7s; }
+.timeline-step-2 .timeline-content-card { animation-delay: 1.9s; }
+.timeline-step-3 .timeline-content-card { animation-delay: 3.1s; }
+.timeline-step-4 .timeline-content-card { animation-delay: 4.3s; }
+.timeline-step-5 .timeline-content-card { animation-delay: 5.5s; }
 
 @keyframes slideInCard {
     to {
@@ -1388,6 +1358,10 @@ body {
 
     .timeline-step-4 .timeline-node {
         animation-delay: 4.1s;
+    }
+
+    .timeline-step-5 .timeline-node {
+        animation-delay: 5.3s;
     }
 
     @keyframes popNode {
