@@ -305,3 +305,73 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+// Lightbox functionality
+let currentGalleryImages = [];
+let currentImageIndex = 0;
+
+document.addEventListener('DOMContentLoaded', function() {
+    const lightboxModalEl = document.getElementById('lightboxModal');
+    if(lightboxModalEl) {
+        const lightboxImg = document.getElementById('lightboxImage');
+        
+        // Add Next/Prev buttons if they don't exist
+        const modalBody = lightboxModalEl.querySelector('.modal-body');
+        if (!document.getElementById('lightboxPrev')) {
+            modalBody.insertAdjacentHTML('beforeend', `
+                <button id="lightboxPrev" class="lightbox-nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button id="lightboxNext" class="lightbox-nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            `);
+        }
+        
+        const prevBtn = document.getElementById('lightboxPrev');
+        const nextBtn = document.getElementById('lightboxNext');
+
+        function updateLightboxImage() {
+            if (currentGalleryImages.length > 0) {
+                lightboxImg.src = currentGalleryImages[currentImageIndex].src;
+                prevBtn.style.display = currentGalleryImages.length > 1 ? 'flex' : 'none';
+                nextBtn.style.display = currentGalleryImages.length > 1 ? 'flex' : 'none';
+            }
+        }
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (currentGalleryImages.length > 0) {
+                currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+                updateLightboxImage();
+            }
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (currentGalleryImages.length > 0) {
+                currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+                updateLightboxImage();
+            }
+        });
+
+        document.querySelectorAll('.gallery-container').forEach(container => {
+            const images = Array.from(container.querySelectorAll('.gallery-main-img'));
+            images.forEach((img, index) => {
+                img.addEventListener('click', function() {
+                    currentGalleryImages = images;
+                    currentImageIndex = index;
+                    updateLightboxImage();
+                    const modal = new bootstrap.Modal(lightboxModalEl);
+                    modal.show();
+                });
+            });
+        });
+
+        document.querySelectorAll('.single-gallery-img').forEach(img => {
+            img.addEventListener('click', function() {
+                currentGalleryImages = [img];
+                currentImageIndex = 0;
+                updateLightboxImage();
+                const modal = new bootstrap.Modal(lightboxModalEl);
+                modal.show();
+            });
+        });
+    }
+});

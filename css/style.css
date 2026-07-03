@@ -1682,3 +1682,86 @@ a[href*="docs.google.com/forms"] {
 .project-list-animated li:nth-child(5) {
     animation-delay: 0.5s;
 }
+/* Gallery Styles */
+.gallery-main-img {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: transform 0.2s;
+}
+.gallery-main-img:hover {
+    transform: scale(1.01);
+}
+.thumbnail-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px 0;
+    scrollbar-width: thin;
+}
+.thumbnail-container::-webkit-scrollbar {
+    height: 6px;
+}
+.thumbnail-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+.thumbnail-img {
+    height: 80px;
+    width: 120px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 6px;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    border: 2px solid transparent;
+}
+.thumbnail-img.active, .thumbnail-img:hover {
+    opacity: 1;
+    border-color: var(--bs-primary);
+}
+.lightbox-modal .modal-content {
+    background-color: transparent;
+    border: none;
+}
+.lightbox-modal .btn-close {
+    filter: invert(1);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1060;
+}
+.lightbox-img {
+    max-height: 90vh;
+    object-fit: contain;
+    width: 100%;
+}
+.lightbox-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 15px 20px;
+    cursor: pointer;
+    z-index: 1070;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+.lightbox-nav-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+.lightbox-nav-btn.prev-btn {
+    left: 20px;
+}
+.lightbox-nav-btn.next-btn {
+    right: 20px;
+}
